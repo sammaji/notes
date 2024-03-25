@@ -75,6 +75,6 @@ NOTE: use `\\` instead of single `\` for slashes
 ---
 string.search(pattern) -> returns the index of the first occurrence of given pattern.
 
-### Matching and Grouping
+### [[Matching and Grouping]]
 
 ### Exercise: Build a regex parser

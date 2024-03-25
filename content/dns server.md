@@ -1,3 +1,6 @@
+- I used [this guide](https://github.com/EmilHernvall/dnsguide) (written in rust) to learn how to create a dns server.
+- Here's my own [implementation](https://github.com/sammaji/toy-dns-server) (written in typescript).
+
 dns -> domain name system
 ### Send and receive UDP packets
 
@@ -125,6 +128,3 @@ For example, the authoritative servers for the zone google.com are ns1.google.co
 ### Caching Server
 Caching Server - A DNS server that services DNS lookups by first checking its cache to see if it already knows of the record being requested, and if not performing a recursive lookup to figure it out.
 ## [[Recursive Resolve]]
-
-
-I used [this guide](https://github.com/EmilHernvall/dnsguide) to learn how to create a dns server.

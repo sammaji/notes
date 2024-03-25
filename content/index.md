@@ -1,5 +1,5 @@
 ---
-title: Notes Of Sam Maji
+title: 
 tags:
   - notes
   - Introduction

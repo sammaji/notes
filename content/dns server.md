@@ -1,4 +1,4 @@
-https://github.com/EmilHernvall/dnsguide
+dns -> domain name system
 ### Send and receive UDP packets
 
 Create a UDP socket that listens to port 2053.
@@ -37,21 +37,21 @@ All communications in the DNS protocol are carried in a single format called a "
 
 The header section of a DNS message contains the following fields:
 
-|Field|Size|Description|
-|---|---|---|
-|Packet Identifier (ID)|16 bits|A random ID assigned to query packets. Response packets must reply with the same ID. <br> |
-|Query/Response Indicator (QR)|1 bit|1 for a reply packet, 0 for a question packet.  <br> |
-|Operation Code (OPCODE)|4 bits|Specifies the kind of query in a message.  <br> |
-|Authoritative Answer (AA)|1 bit|1 if the responding server "owns" the domain queried, i.e., it's authoritative.  <br> |
-|Truncation (TC)|1 bit|1 if the message is larger than 512 bytes. Always 0 in UDP responses.  <br> |
-|Recursion Desired (RD)|1 bit|Sender sets this to 1 if the server should recursively resolve this query, 0 otherwise.  <br> |
-|Recursion Available (RA)|1 bit|Server sets this to 1 to indicate that recursion is available.  <br> |
-|Reserved (Z)|3 bits|Used by DNSSEC queries. At inception, it was reserved for future use.  <br> |
-|Response Code (RCODE)|4 bits|Response code indicating the status of the response.  <br> |
-|Question Count (QDCOUNT)|16 bits|Number of questions in the Question section.  <br> |
-|Answer Record Count (ANCOUNT)|16 bits|Number of records in the Answer section.  <br> |
-|Authority Record Count (NSCOUNT)|16 bits|Number of records in the Authority section.  <br> |
-|Additional Record Count (ARCOUNT)|16 bits|Number of records in the Additional section.  <br> |
+| Field                             | Size    | Description                                                                                   |
+| --------------------------------- | ------- | --------------------------------------------------------------------------------------------- |
+| Packet Identifier (ID)            | 16 bits | A random ID assigned to query packets. Response packets must reply with the same ID. <br>     |
+| Query/Response Indicator (QR)     | 1 bit   | 1 for a reply packet, 0 for a question packet.  <br>                                          |
+| Operation Code (OPCODE)           | 4 bits  | Specifies the kind of query in a message.  <br>                                               |
+| Authoritative Answer (AA)         | 1 bit   | 1 if the responding server "owns" the domain queried, i.e., it's authoritative.  <br>         |
+| Truncation (TC)                   | 1 bit   | 1 if the message is larger than 512 bytes. Always 0 in UDP responses.  <br>                   |
+| Recursion Desired (RD)            | 1 bit   | Sender sets this to 1 if the server should recursively resolve this query, 0 otherwise.  <br> |
+| Recursion Available (RA)          | 1 bit   | Server sets this to 1 to indicate that recursion is available.  <br>                          |
+| Reserved (Z)                      | 3 bits  | Used by DNSSEC queries. At inception, it was reserved for future use.  <br>                   |
+| Response Code (RCODE)             | 4 bits  | Response code indicating the status of the response.  <br>                                    |
+| Question Count (QDCOUNT)          | 16 bits | Number of questions in the Question section.  <br>                                            |
+| Answer Record Count (ANCOUNT)     | 16 bits | Number of records in the Answer section.  <br>                                                |
+| Authority Record Count (NSCOUNT)  | 16 bits | Number of records in the Authority section.  <br>                                             |
+| Additional Record Count (ARCOUNT) | 16 bits | Number of records in the Additional section.  <br>                                            |
 The header section is always 12 bytes long. Integers are encoded in big-endian format.
 
 #### Storing flags in a bit mask
@@ -113,11 +113,10 @@ Each RR has the following structure:
 
 In this stage, we'll only deal with the "A" record type, which maps a domain name to an IPv4 address. The RDATA field for an "A" record type is a 4-byte integer representing the IPv4 address.
 
-### Header Compression
+### [[Header compression]]
 
 ## Dns Server
 A dns server is generally either of these two types:
-
 ### Authoritative server
 A dns server hosting one or more zones. Its the final holder of the IP address of the domain you are looking for.
 
@@ -125,7 +124,7 @@ For example, the authoritative servers for the zone google.com are ns1.google.co
 
 ### Caching Server
 Caching Server - A DNS server that services DNS lookups by first checking its cache to see if it already knows of the record being requested, and if not performing a recursive lookup to figure it out.
+## [[Recursive Resolve]]
 
 
-## Recursive Resolve
-
+I used [this guide](https://github.com/EmilHernvall/dnsguide) to learn how to create a dns server.

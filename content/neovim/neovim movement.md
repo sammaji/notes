@@ -1,4 +1,3 @@
-## movement
 ### move one character
 h -> left
 j -> top

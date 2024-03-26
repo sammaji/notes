@@ -2,10 +2,11 @@
 title: what is docker | sam's notes
 tags:
   - docker
+  - containerization
+  - cli
 draft: false
 ---
 docker provides the ability to package and run an application in a loosely isolated environment called container.
-
 ## docker cli
 the docker engine consists of three parts:
 - docker cli
@@ -14,7 +15,7 @@ the docker engine consists of three parts:
 
 When you run a command, behind the scenes the client sends a request through the REST API to the docker daemon which takes care of images, containers and other resources.
 
-docker cli follows the below semantics:
+docker management commands like compose, image, system, etc. follow this semantics.
 ```
 docker COMMAND SUBCOMMAND [options] [arguments]
 ```
@@ -34,11 +35,14 @@ above command runs a container, downloads if it does not exist locally.
 - you could also run `docker container run`, it follows the `docker COMMAND SUBCOMMAND` semantics
 ### docker container sub-commands
 e.g. `docker container SUBCOMMANDS`
-- `ls` -> lists all running containers ( -a: all containers and -s: for size )
+- `ls` -> lists all running containers
+	- `-a`: all containers and `-s`: for size
+	- same as `docker ps` or `docker container ps`
 - `start` / `stop` -> start / stop container (-d: detached mode)
 - `rm NAME|ID1 NAME|ID2 ...` -> delete a container (you need to stop it first)
 - `prune` -> delete all stopped containers
-- `exec NAME|ID COMMAND` ->
+- `exec NAME|ID COMMAND` -> execute a command inside a container
+	- e.g., docker exec 918ffd ps -a
 ## image vs container
 a container is the food while an image is the recipe.
 - you cannot change an existing image.
@@ -52,31 +56,15 @@ e.g. `docker iamge SUBCOMMAND`
 - `rm NAME|ID1 NAME|ID2 ...` -> delete a container
 	- you should always delete all container related to the image first, then delete the image. 
 - `prune` -> removes "dangling images" - these are images that have no name.
+	- `-a` -> removes all images not associated with a container.
 
 `docker system prune` -> removes everything:
 - all stopped containers
 - all networks not used by at least one container
 - all dangling images
 - unused build cache
-## dockerfile
-- dockerfile is the recipe to build a docker image
-
-```dockerfile
-FROM <base-image-name>:<tag-name>
-RUN <install deps.>
-CMD <command executed on `docker container run`>
-```
-
-To create an image capable of running node.js, run this dockerfile.
-
-```
-FROM alpine:latest
-RUN 
-```
-
-related
+## Related
 [[creating container from scratch]] -> https://youtu.be/8fi7uSYlOdc
 [[namespaces]], [[cgroups]], [[union filesystems]]
 [[volume mounts]], [[bind mounts]]
 [[docker-compose]]
-

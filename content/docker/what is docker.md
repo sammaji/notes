@@ -5,6 +5,19 @@ tags:
 draft: false
 ---
 docker provides the ability to package and run an application in a loosely isolated environment called container.
+
+## docker cli
+the docker engine consists of three parts:
+- docker cli
+- docker rest api
+- docker daemon
+
+When you run a command, behind the scenes the client sends a request through the REST API to the docker daemon which takes care of images, containers and other resources.
+
+docker cli follows the below semantics:
+```
+docker COMMAND SUBCOMMAND [options] [arguments]
+```
 ## container 
 - lightweight
 - independent - they contain everything required to run an application
@@ -23,7 +36,9 @@ above command runs a container, downloads if it does not exist locally.
 e.g. `docker container SUBCOMMANDS`
 - `ls` -> lists all running containers ( -a: all containers and -s: for size )
 - `start` / `stop` -> start / stop container (-d: detached mode)
-- `rm` -> delete a container
+- `rm NAME|ID1 NAME|ID2 ...` -> delete a container (you need to stop it first)
+- `prune` -> delete all stopped containers
+- `exec NAME|ID COMMAND` ->
 ## image vs container
 a container is the food while an image is the recipe.
 - you cannot change an existing image.
@@ -34,8 +49,15 @@ e.g. `docker iamge SUBCOMMAND`
 - `build` -> builds an image from a dockerfile
 - `pull IMAGE:TAG` -> downloads an image from registry
 - `push IMAGE:TAG` -> push an image to registry
-- rm -> delete a container
+- `rm NAME|ID1 NAME|ID2 ...` -> delete a container
+	- you should always delete all container related to the image first, then delete the image. 
+- `prune` -> removes "dangling images" - these are images that have no name.
 
+`docker system prune` -> removes everything:
+- all stopped containers
+- all networks not used by at least one container
+- all dangling images
+- unused build cache
 ## dockerfile
 - dockerfile is the recipe to build a docker image
 

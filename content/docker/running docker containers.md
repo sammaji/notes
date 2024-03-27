@@ -52,8 +52,6 @@ attaching links the `stdin` and `stdout` of the host terminal to the container. 
 docker attach --no-stdin ID|NAME # does not pass the stdin to container
 docker attach --sig-proxy false ID|NAME # does not pass signals like stdint, stdkill, etc.
 ```
-
-
 ## related
 ![[contents]]
 [[docker multi-platform builds]] -> https://docs.docker.com/build/building/multi-platform/

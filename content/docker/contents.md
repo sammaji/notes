@@ -8,7 +8,7 @@ draft: false
 - [[basic docker commands]]
 - [[running docker containers]]
 - [[content/docker/dockerfile|dockerfile]]
-- [[bind mount]]
+- [[bind mount, ports and expose]]
 - [[docker volumes]]
 
 [[creating container from scratch]] -> https://youtu.be/8fi7uSYlOdc

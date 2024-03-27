@@ -63,8 +63,21 @@ e.g. `docker iamge SUBCOMMAND`
 - all networks not used by at least one container
 - all dangling images
 - unused build cache
-## Related
-[[creating container from scratch]] -> https://youtu.be/8fi7uSYlOdc
-[[namespaces]], [[cgroups]], [[union filesystems]]
-[[volume mounts]], [[bind mounts]]
-[[docker-compose]]
+### copy, history, commit
+you can copy files from host machine to your container and vice versa using `docker cp` or `docker container cp`. If you are mentioning the container path, it should be of this format: `CONTAINER-ID|NAME:CONTAINER-FILE-PATH`.
+
+```
+docker cp SOURCE DEST
+---
+e.g., docker cp /hello.txt c99d19efdab3:/usr/src/app/hello.txt
+```
+
+since we changed the container, you can use `docker diff ID|NAME` command to check all the changes made in the container. A=added; D=deleted; C=changed.
+
+you can build an image from an container using `docker commit`. its generally better to use a dockerfile instead as defining the changes to the Dockerfile is much more sustainable method of managing changes.
+
+```
+docker commit CONTAINER-ID|NAME IMAGE-NAME
+```
+## related
+![[contents]]

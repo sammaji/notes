@@ -19,6 +19,11 @@ you can also pass a script while using the run command. the following will run t
 ```
 docker container run -it --name looper alpine:latest sh -c "while true; do date; sleep 1; done;"
 ```
+
+`--rm` -> passing this flag will delete a container when its exited.
+- you can't run start to restart the container.
+- pressing `ctrl+c` will delete the container.
+- to detach from it, press `ctrl+p` then `ctrl+q` 
 ### exec
 you can do the same thing using `docker container exec`.
 ```
@@ -48,3 +53,7 @@ docker attach --no-stdin ID|NAME # does not pass the stdin to container
 docker attach --sig-proxy false ID|NAME # does not pass signals like stdint, stdkill, etc.
 ```
 
+
+## related
+![[contents]]
+[[docker multi-platform builds]] -> https://docs.docker.com/build/building/multi-platform/

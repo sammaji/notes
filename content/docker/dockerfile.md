@@ -3,7 +3,7 @@ title: dockerfile
 tags:
   - docker
   - dockerfile
-draft: true
+draft: false
 ---
 dockerfile is the recipe to build a docker image
 - `FROM` -> specify name of base image

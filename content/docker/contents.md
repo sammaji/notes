@@ -11,6 +11,8 @@ draft: false
 - [[bind mount, ports and expose]]
 - [[docker volumes]]
 - [[docker-compose]]
+- [[docker networking]]
+- 
 
 [[creating container from scratch]] -> https://youtu.be/8fi7uSYlOdc
 [[namespaces]], [[cgroups]], [[union filesystems]]

@@ -53,8 +53,8 @@ e.g. `docker iamge SUBCOMMAND`
 - `build` -> builds an image from a dockerfile
 - `pull IMAGE:TAG` -> downloads an image from registry
 - `push IMAGE:TAG` -> push an image to registry
-- `rm NAME|ID1 NAME|ID2 ...` -> delete a container
-	- you should always delete all container related to the image first, then delete the image. 
+- `rm NAME|ID1 NAME|ID2 ...` -> delete an image
+	- you should always delete all containers related to the image first, then delete the image. 
 - `prune` -> removes "dangling images" - these are images that have no name.
 	- `-a` -> removes all images not associated with a container.
 

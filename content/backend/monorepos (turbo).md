@@ -1,4 +1,19 @@
 source: https://turbo.build/repo/docs
+## build system 
+tools that performs tasks like minifying, linting, building code.
+## build system orchestrator
+tools that orchestrate the build process. e.g. turborepo, vite.
+
+turborepo is not exactly a mono repo frame work. it orchestrates the build process, so its a build system orchestrator.
+## monorepo
+a monorepo framework provides tools and conventions for managing projects that contain multiple packages or applications within a single repository (monorepo). This includes dependency management between packages, workspace configuration.
+
+e.g., lerna, nx, yarn workspaces, etc.
+
+## benefits of turborepo
+- remote caching
+- parallelisation
+- dependency graph awareness
 ## workspace
 
 They are made so that you can share packages in a workspace.

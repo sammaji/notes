@@ -1,3 +1,11 @@
+---
+title: regular expressions
+tags:
+  - regex
+  - regular-expressions
+  - cheatsheet
+draft: true
+---
 used for pattern matching.
 
 - `abc` -> this regex will match "abc" in a string.

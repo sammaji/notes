@@ -60,5 +60,7 @@ services:
 			- VARIABLE=value
 ```
 
-[[other ways to define env variables in docker]] -> https://docs.docker.com/compose/environment-variables/set-environment-variables/
+[other ways to define env variables in docker] -> https://docs.docker.com/compose/environment-variables/set-environment-variables/
 
+### related
+![[contents]]

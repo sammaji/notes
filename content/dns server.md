@@ -1,5 +1,5 @@
 - I used [this guide](https://github.com/EmilHernvall/dnsguide) (written in rust) to learn how to create a dns server.
-- Here's my own [implementation](https://github.com/sammaji/toy-dns-server) (written in typescript).
+- Here's my own [implementation](https://github.com/sammaji/toy-dns-server) of a dns resolver (written in typescript).
 
 dns -> domain name system
 ### Send and receive UDP packets
